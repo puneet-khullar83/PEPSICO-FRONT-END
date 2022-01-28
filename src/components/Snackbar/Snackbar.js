@@ -9,7 +9,7 @@ function Alert(props) {
 }
 
 export function MaterialSnackbar(props) {
-  const { isOpen, message, type } = useSelector(state => state.snackbar);
+  const { isOpen, message, type } = useSelector((state) => state.snackbar);
   const dispatch = useDispatch();
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
