@@ -1,11 +1,11 @@
 import React from "react";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import { useSelector, useDispatch } from "react-redux";
 import { hideSnackbarAction } from "../../store/Snackbar/SnackbarAction";
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
+function AlertBox(props) {
+  return <Alert elevation={6} variant="filled" {...props} />;
 }
 
 export function MaterialSnackbar(props) {
@@ -25,9 +25,9 @@ export function MaterialSnackbar(props) {
       key={`bottom,center`}
       onClose={() => handleClose}
     >
-      <Alert onClose={handleClose} severity={type} className="medium_font">
+      <AlertBox onClose={handleClose} severity={type} className="medium_font">
         {message}
-      </Alert>
+      </AlertBox>
     </Snackbar>
   );
 }

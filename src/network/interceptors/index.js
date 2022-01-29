@@ -8,15 +8,15 @@ export const isHandlerEnabled = (config = {}) => {
     : true;
 };
 
-export const requestHandler = request => {
+export const requestHandler = (request) => {
   if (isHandlerEnabled(request)) {
-   // Modify request here
+    // Modify request here
     store.dispatch(loader(true));
   }
   return request;
 };
 
-export const successHandler = response => {
+export const successHandler = (response) => {
   if (isHandlerEnabled(response)) {
     // Hanlde Response
     store.dispatch(loader(false));
@@ -24,7 +24,7 @@ export const successHandler = response => {
   return response;
 };
 
-export const errorHandler = error => {
+export const errorHandler = (error) => {
   if (isHandlerEnabled(error.config)) {
     store.dispatch(loader(false));
     // You can decide what you need to do to handle errors.
